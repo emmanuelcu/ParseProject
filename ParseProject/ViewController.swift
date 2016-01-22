@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var userTextField: UITextField!
+    @IBAction func saveUserButtonPressed(sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Creating the PFObject
+        let loginCredentials = PFObject (className: "LoginCredentials")
+        loginCredentials["name"]=self.userTextField.text;
+        loginCredentials["password"]=self.passwordTextField.text;
+        
+        //Saving the PFObject
+        loginCredentials.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success){
+                let alert = UIAlertView(title: "Alert", message: "Your information has been saved.", delegate: nil, cancelButtonTitle: "OK")
+                
+                alert.show()
+                
+                //print("data is saved")
+                
+            }else if(!success){
+                print("@%", error)
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
