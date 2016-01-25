@@ -9,18 +9,11 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var userTextField: UITextField!
     @IBAction func saveUserButtonPressed(sender: UIButton) {
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         //Creating the PFObject
         let loginCredentials = PFObject (className: "LoginCredentials")
         loginCredentials["name"]=self.userTextField.text;
@@ -34,12 +27,21 @@ class ViewController: UIViewController {
                 
                 alert.show()
                 
-                //print("data is saved")
+                print("data is saved")
                 
             }else if(!success){
-                print("@%", error)
+                NSLog("Error: %@", error!)
             }
         }
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        
         
     }
 
