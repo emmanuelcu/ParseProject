@@ -10,11 +10,12 @@ import UIKit
 import Parse
 
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController{
     
     
-    var credentials:[PFObject]?
-
+    var dataParse:NSMutableArray = NSMutableArray()
+    var count:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,9 +31,13 @@ class TableViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]? , error: NSError?) -> Void in
             if(error == nil){
-
-                    self.credentials = PFObject.mutableCopy() as! [PFObject]
-                    self.tableView.reloadData()
+                
+                print("The current number of users is \(objects!.count)")
+                self.count = objects!.count
+                self.tableView.reloadData()
+                
+                
+                
             } else {
                 print("Error")
             }
@@ -58,22 +63,20 @@ class TableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        //return self.dataParse.count
+        return self.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "CellData"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TableViewCell
         // Configure the cell...
-        
-        
-        print("Todo ok")
-        //let loginCredentials = credentials[indexPath.row]
-//        
-//        cell.textLabel?.text = credentials.name
-//        cell.detailTextLabel?.text = credentials.password
+        cell.password.text = dataParse[indexPath.row]["name"] as? String
+        cell.name.text = dataParse[indexPath.row]["user"] as? String
 
+
+        print("Error")
         return cell
     }
 

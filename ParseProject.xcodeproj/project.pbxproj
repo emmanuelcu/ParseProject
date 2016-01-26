@@ -32,6 +32,7 @@
 		2A1ED5FA1C514AA00082E4FF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1ED5F41C514AA00082E4FF /* Bolts.framework */; };
 		2A1ED5FB1C514AA00082E4FF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1ED5F51C514AA00082E4FF /* Parse.framework */; };
 		2A1ED5FD1C52DA4B0082E4FF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1ED5FC1C52DA4B0082E4FF /* TableViewController.swift */; };
+		2A1ED5FF1C56E69D0082E4FF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1ED5FE1C56E69D0082E4FF /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		2A1ED5F41C514AA00082E4FF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		2A1ED5F51C514AA00082E4FF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2A1ED5FC1C52DA4B0082E4FF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
+		2A1ED5FE1C56E69D0082E4FF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				2A1ED5FC1C52DA4B0082E4FF /* TableViewController.swift */,
 				2A1ED59C1C500E900082E4FF /* ViewController.swift */,
 				2A1ED59E1C500E900082E4FF /* Main.storyboard */,
+				2A1ED5FE1C56E69D0082E4FF /* TableViewCell.swift */,
 				2A1ED5A11C500E900082E4FF /* Assets.xcassets */,
 				2A1ED5A31C500E900082E4FF /* LaunchScreen.storyboard */,
 				2A1ED5A61C500E900082E4FF /* Info.plist */,
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A1ED59D1C500E900082E4FF /* ViewController.swift in Sources */,
+				2A1ED5FF1C56E69D0082E4FF /* TableViewCell.swift in Sources */,
 				2A1ED5FD1C52DA4B0082E4FF /* TableViewController.swift in Sources */,
 				2A1ED59B1C500E900082E4FF /* AppDelegate.swift in Sources */,
 			);

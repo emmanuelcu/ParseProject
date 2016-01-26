@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellData" textLabel="Hs4-Ec-z3w" detailTextLabel="Kie-aQ-PmT" style="IBUITableViewCellStyleSubtitle" id="uuP-SE-S25">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellData" textLabel="Hs4-Ec-z3w" detailTextLabel="Kie-aQ-PmT" style="IBUITableViewCellStyleSubtitle" id="uuP-SE-S25" customClass="TableViewCell" customModule="ParseProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uuP-SE-S25" id="WzH-4B-6id">
@@ -95,6 +95,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="Hs4-Ec-z3w" id="9ag-1Z-lRv"/>
+                                    <outlet property="password" destination="Kie-aQ-PmT" id="kyM-U0-b7L"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
